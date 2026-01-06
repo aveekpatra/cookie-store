@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import { CartProvider } from "@/context/CartContext";
 import { UserProvider } from "@/context/UserContext";
 import CartDrawer from "@/components/CartDrawer";
+import Loading from "@/components/Loading";
 
 const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-montserrat" });
 const greatVibes = Great_Vibes({
@@ -29,6 +30,7 @@ export default function RootLayout({
             <body className={`${montserrat.variable} ${greatVibes.variable} font-sans`}>
                 <UserProvider>
                     <CartProvider>
+                        <Loading />
                         <Header />
                         {children}
                         <CartDrawer />

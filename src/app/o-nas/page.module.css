@@ -34,7 +34,9 @@
     font-family: var(--font-great-vibes);
     font-size: 5rem;
     margin: 0;
+    color: white;
     text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+    animation: heroReveal 1s ease-out 0.2s both;
 }
 
 .heroContent p {
@@ -43,6 +45,20 @@
     letter-spacing: 2px;
     text-transform: uppercase;
     opacity: 0.9;
+    color: white;
+    animation: heroReveal 1s ease-out 0.5s both;
+}
+
+@keyframes heroReveal {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Split Sections */

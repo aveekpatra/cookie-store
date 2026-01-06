@@ -1,0 +1,38 @@
+.footer {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 4rem 1rem 1rem;
+    margin-top: auto;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.column h4 {
+    color: white;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.column p {
+    color: #ccc;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid #333;
+    padding-top: 1rem;
+    font-size: 0.8rem;
+    color: #666;
+}

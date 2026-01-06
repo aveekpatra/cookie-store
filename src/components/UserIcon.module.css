@@ -1,0 +1,25 @@
+.userButton {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-red);
+    text-decoration: none;
+    padding: 0.5rem;
+    margin-left: 1rem;
+    transition: transform 0.2s ease;
+}
+
+.userButton:hover {
+    transform: scale(1.05);
+}
+
+.userName {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .userName {
+        display: none;
+    }
+}

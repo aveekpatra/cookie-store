@@ -3,6 +3,9 @@ import { Montserrat, Great_Vibes } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { CartProvider } from "@/context/CartContext";
+import { UserProvider } from "@/context/UserContext";
+import CartDrawer from "@/components/CartDrawer";
 
 const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-montserrat" });
 const greatVibes = Great_Vibes({
@@ -24,9 +27,14 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`${montserrat.variable} ${greatVibes.variable} font-sans`}>
-                <Header />
-                {children}
-                <Footer />
+                <UserProvider>
+                    <CartProvider>
+                        <Header />
+                        {children}
+                        <CartDrawer />
+                        <Footer />
+                    </CartProvider>
+                </UserProvider>
             </body>
         </html>
     );

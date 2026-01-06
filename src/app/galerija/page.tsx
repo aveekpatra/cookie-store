@@ -12,21 +12,28 @@ const galleryItems = [
 
 export default function Galerija() {
     return (
-        <main className={styles.container}>
-            <h1 className="font-script" style={{ textAlign: 'center', fontSize: '4rem', color: 'var(--primary-red)', margin: '4rem 0 2rem' }}>Galerija Umetnin</h1>
-            <p className={styles.intro}>
-                Sprehodite se skozi naše sladke kreacije.
-            </p>
+        <main className={styles.main}>
+            <section className={styles.hero}>
+                <h1 className={styles.heroTitle}>Galerija Umetnin</h1>
+            </section>
 
-            <div className={styles.galleryGrid}>
-                {galleryItems.map((item, index) => (
-                    <div key={item.id} className={`${styles.galleryItem} ${styles[item.span]}`}>
-                        <Image src={item.src} alt={item.alt} fill style={{ objectFit: 'cover' }} className={styles.image} />
-                        <div className={styles.overlay}>
-                            <span>{item.alt}</span>
-                        </div>
+            <div className={styles.sectionContainer}>
+                <div className={styles.contentCard}>
+                    <p className={styles.intro}>
+                        Sprehodite se skozi naše sladke kreacije.
+                    </p>
+
+                    <div className={styles.galleryGrid}>
+                        {galleryItems.map((item, index) => (
+                            <div key={item.id} className={`${styles.galleryItem} ${styles[item.span]}`}>
+                                <Image src={item.src} alt={item.alt} fill style={{ objectFit: 'cover' }} className={styles.image} />
+                                <div className={styles.overlay}>
+                                    <span>{item.alt}</span>
+                                </div>
+                            </div>
+                        ))}
                     </div>
-                ))}
+                </div>
             </div>
         </main>
     );

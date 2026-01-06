@@ -1,53 +1,188 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import styles from './page.module.css';
 
 export default function ONas() {
     return (
-        <main className={styles.container}>
-            {/* Hero */}
+        <main className={styles.main}>
+            {/* Hero with Image */}
             <section className={styles.hero}>
                 <div className={styles.heroImage}>
-                    <Image src="/images/about.png" alt="Naš Chef" fill style={{ objectFit: 'cover' }} priority />
+                    <Image
+                        src="/images/interior.png"
+                        alt="Slaščičarstvo MM Delavnica"
+                        fill
+                        style={{ objectFit: 'cover' }}
+                        priority
+                    />
+                    <div className={styles.heroOverlay} />
                 </div>
                 <div className={styles.heroContent}>
-                    <h1 className="font-script" style={{ fontSize: '4rem', color: 'var(--primary-red)', marginBottom: '1rem' }}>Naša Zgodba</h1>
-                    <p className={styles.lead}>
-                        Od skromnih začetkov v domači kuhinji do najbolj priljubljene slaščičarne v mestu.
+                    <h1>O nas</h1>
+                    <p>Družinska tradicija od leta 2000</p>
+                </div>
+            </section>
+
+            {/* Intro Split Section */}
+            <section className={styles.splitSection}>
+                <div className={styles.splitImage}>
+                    <Image
+                        src="/images/about.png"
+                        alt="Naša zgodba"
+                        fill
+                        style={{ objectFit: 'cover' }}
+                    />
+                </div>
+                <div className={styles.splitContent}>
+                    <span className={styles.eyebrow}>Kdo smo</span>
+                    <h2>Družinsko podjetje iz Kranja</h2>
+                    <p>
+                        Slaščičarstvo M.M. smo družinsko podjetje v Čirčah pri Kranju.
+                        Že več kot dva desetletja ustvarjamo sladke trenutke za naše stranke.
+                    </p>
+                    <p>
+                        Vsi naši izdelki so izdelani ročno, brez umetnih dodatkov ali aditivov.
+                        Naša predanost kakovosti ostaja nespremenjena od prvega dne.
+                    </p>
+                    <div className={styles.signature}>
+                        <strong>Marko Zorman</strong>
+                        <span>Ustanovitelj</span>
+                    </div>
+                </div>
+            </section>
+
+            {/* Stats Bar */}
+            <section className={styles.statsBar}>
+                <div className={styles.statItem}>
+                    <span className={styles.statNum}>2000</span>
+                    <span className={styles.statLabel}>Leto ustanovitve</span>
+                </div>
+                <div className={styles.statItem}>
+                    <span className={styles.statNum}>40+</span>
+                    <span className={styles.statLabel}>Vrst piškotov</span>
+                </div>
+                <div className={styles.statItem}>
+                    <span className={styles.statNum}>4</span>
+                    <span className={styles.statLabel}>Kavarne</span>
+                </div>
+                <div className={styles.statItem}>
+                    <span className={styles.statNum}>45%</span>
+                    <span className={styles.statLabel}>Izvoz</span>
+                </div>
+            </section>
+
+            {/* Story Section - Reversed */}
+            <section className={styles.splitSection + ' ' + styles.reversed}>
+                <div className={styles.splitImage}>
+                    <Image
+                        src="/images/item-cake-wedding.png"
+                        alt="Poročna torta"
+                        fill
+                        style={{ objectFit: 'cover' }}
+                    />
+                </div>
+                <div className={styles.splitContent}>
+                    <span className={styles.eyebrow}>Naša zgodba</span>
+                    <h2>Od garaže do uspešnega podjetja</h2>
+                    <p>
+                        Marko Zorman se je s peko slaščic začel ukvarjati pri rosnih 15 letih,
+                        ko je v domači garaži pekel piškote za lasten zaslužek.
+                    </p>
+                    <p>
+                        1. decembra 2000 je uresničil svoje sanje in odprl lastno slaščičarsko
+                        delavnico. Začetki so bili skromni — prva leta sta z ženo Matejo
+                        delala sama, zgolj torte po naročilu in piškote.
+                    </p>
+                    <p>
+                        Danes v podjetju dela 25 ljudi, izvažamo v Italijo, Avstrijo,
+                        Hrvaško in Bolgarijo.
                     </p>
                 </div>
             </section>
 
-            {/* Content */}
-            <section className={styles.content}>
-                <div className={styles.textBlock}>
-                    <h2>Tradicija, ki traja</h2>
-                    <p>
-                        Začelo se je z babičinim receptom za jabolčno pito. Danes, 15 let kasneje, še vedno uporabljamo iste temeljne vrednote:
-                        <strong> kakovost, strast in potrpežljivost.</strong>
-                    </p>
-                    <p>
-                        Verjamemo, da si vsak zasluži trenutek sladkega razvajanja. Zato pri nas ne sklepamo kompromisov. Uporabljamo le pravo maslo,
-                        svežo smetano, belgijsko čokolado in lokalno sadje. Brez praškov, brez ojačevalcev okusa. Le narava v svoji najslajši obliki.
-                    </p>
+            {/* Product Showcase */}
+            <section className={styles.showcase}>
+                <div className={styles.showcaseHeader}>
+                    <span className={styles.eyebrow}>Kaj nudimo</span>
+                    <h2>Naši izdelki</h2>
                 </div>
+                <div className={styles.showcaseGrid}>
+                    <div className={styles.showcaseItem}>
+                        <Image src="/images/menu-cakes.png" alt="Torte" fill style={{ objectFit: 'cover' }} />
+                        <div className={styles.showcaseLabel}>Torte po naročilu</div>
+                    </div>
+                    <div className={styles.showcaseItem}>
+                        <Image src="/images/menu-cookies.png" alt="Piškoti" fill style={{ objectFit: 'cover' }} />
+                        <div className={styles.showcaseLabel}>Domači piškoti</div>
+                    </div>
+                    <div className={styles.showcaseItem}>
+                        <Image src="/images/menu-pastries.png" alt="Rezine" fill style={{ objectFit: 'cover' }} />
+                        <div className={styles.showcaseLabel}>Rezine in peciva</div>
+                    </div>
+                    <div className={styles.showcaseItem}>
+                        <Image src="/images/menu-pasta.png" alt="Testenine" fill style={{ objectFit: 'cover' }} />
+                        <div className={styles.showcaseLabel}>Domače testenine</div>
+                    </div>
+                </div>
+                <Link href="/ponudba" className={styles.showcaseBtn}>
+                    Oglejte si celotno ponudbo →
+                </Link>
+            </section>
 
-                <div className={styles.valuesGrid}>
-                    <div className={styles.valueItem}>
-                        <span className={styles.icon}>♥</span>
-                        <h3>Ročno Delo</h3>
-                        <p>Vsak okras, vsak cvet je izdelan ročno z neverjetno natančnostjo.</p>
+            {/* Cafes */}
+            <section className={styles.cafes}>
+                <div className={styles.cafesHeader}>
+                    <span className={styles.eyebrow}>Naše kavarne</span>
+                    <h2>Obiščite nas</h2>
+                    <p>Štiri lokacije, kjer lahko uživate v naših dobrotah</p>
+                </div>
+                <div className={styles.cafesGrid}>
+                    <div className={styles.cafeCard}>
+                        <div className={styles.cafeImage}>
+                            <Image src="/images/cafe-katja.png" alt="Kavarna Katja" fill style={{ objectFit: 'cover' }} />
+                        </div>
+                        <h3>Kavarna Katja</h3>
+                        <p>Merkur, Kranj</p>
                     </div>
-                    <div className={styles.valueItem}>
-                        <span className={styles.icon}>🌿</span>
-                        <h3>Naravno</h3>
-                        <p>Sodelujemo z lokalnimi kmeti za najbolj sveže sezonske sestavine.</p>
+                    <div className={styles.cafeCard}>
+                        <div className={styles.cafeImage}>
+                            <Image src="/images/antic-caffe.png" alt="Antic Cafe" fill style={{ objectFit: 'cover' }} />
+                        </div>
+                        <h3>Antic Cafe</h3>
+                        <p>Šenčur</p>
                     </div>
-                    <div className={styles.valueItem}>
-                        <span className={styles.icon}>★</span>
-                        <h3>Odličnost</h3>
-                        <p>Neustrezno iskanje popolnosti v vsakem receptu.</p>
+                    <div className={styles.cafeCard}>
+                        <div className={styles.cafeImage}>
+                            <Image src="/images/cafe-mause.png" alt="Kavarna Mause" fill style={{ objectFit: 'cover' }} />
+                        </div>
+                        <h3>Kavarna Mause</h3>
+                        <p>Planina</p>
+                    </div>
+                    <div className={styles.cafeCard}>
+                        <div className={styles.cafeImage}>
+                            <Image src="/images/cafe-mm.png" alt="Kavarna MM" fill style={{ objectFit: 'cover' }} />
+                        </div>
+                        <h3>Kavarna Krtino</h3>
+                        <p>Krtina</p>
                     </div>
                 </div>
+            </section>
+
+            {/* Quote */}
+            <section className={styles.quoteSection}>
+                <blockquote>
+                    "Vztrajnost, odločnost in volja do dela so najpomembnejše točke za uspeh."
+                </blockquote>
+                <cite>— Marko Zorman</cite>
+            </section>
+
+            {/* CTA */}
+            <section className={styles.cta}>
+                <h2>Stopimo v kontakt</h2>
+                <p>Naročite torto za posebno priložnost ali nas obiščite v kavarni</p>
+                <Link href="/kontakt" className={styles.ctaBtn}>
+                    Kontaktirajte nas
+                </Link>
             </section>
         </main>
     );

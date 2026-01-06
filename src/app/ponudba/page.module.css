@@ -1,46 +1,208 @@
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem 6rem;
-    min-height: 80vh;
+/* Shop Page Styles */
+.main {
+    background-color: var(--bg-light);
+    min-height: 100vh;
+    font-family: var(--font-montserrat), sans-serif;
 }
 
-.intro {
+/* Hero */
+.hero {
+    background-color: var(--primary-red);
+    color: white;
+    padding: 5rem 2rem 8rem;
     text-align: center;
-    max-width: 600px;
-    margin: 0 auto 4rem;
-    color: var(--text-grey);
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 3rem;
-}
-
-.card {
-    background: white;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: var(--shadow-md);
-    transition: transform 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-.imageWrapper {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+    margin-bottom: -4rem;
     position: relative;
-    height: 250px;
+    z-index: 0;
 }
 
-.content {
-    padding: 1.5rem;
-    text-align: center;
-}
-
-.productTitle {
-    color: var(--primary-red);
+.heroTitle {
+    font-family: var(--font-great-vibes);
+    font-size: 3.5rem;
     margin-bottom: 0.5rem;
+    color: white;
+}
+
+.heroSubtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    letter-spacing: 1px;
+    color: white;
+}
+
+/* Shop Layout */
+.shopContainer {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 3rem 2rem 4rem;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Sidebar */
+.sidebar {
+    position: sticky;
+    top: 2rem;
+    align-self: start;
+}
+
+.filterSection {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.filterSection h3 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.categoryList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.categoryList li {
+    margin-bottom: 0.5rem;
+}
+
+.categoryList button {
+    width: 100%;
+    text-align: left;
+    padding: 0.75rem 1rem;
+    border: none;
+    background: transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: #555;
+    transition: all 0.2s;
+}
+
+.categoryList button:hover {
+    background: #f5f5f5;
+    color: var(--primary-red);
+}
+
+.categoryList button.active {
+    background: var(--primary-red);
+    color: white;
+    font-weight: 600;
+}
+
+/* Main Content */
+.mainContent {
+    min-width: 0;
+}
+
+/* Toolbar */
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 1rem 1.5rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.resultCount {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.sortWrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.sortWrapper label {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.sortSelect {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    background: white;
+    cursor: pointer;
+}
+
+.sortSelect:focus {
+    outline: none;
+    border-color: var(--primary-red);
+}
+
+/* Product Grid */
+.productGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+/* No Results */
+.noResults {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: #999;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .shopContainer {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        position: static;
+    }
+
+    .filterSection {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .filterSection h3 {
+        width: 100%;
+    }
+
+    .categoryList {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .categoryList li {
+        margin: 0;
+    }
+
+    .categoryList button {
+        padding: 0.5rem 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .toolbar {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .productGrid {
+        grid-template-columns: 1fr;
+    }
 }
